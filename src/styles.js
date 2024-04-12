@@ -6,7 +6,7 @@ const calculatorTheme = ({
                     w: '50px',
                     h: '50px',
                     m: '5px',
-                    bg: 'gray.100',
+                    bg: '#FF66FF',
                     justifyContent: 'center',
                     display: 'flex'
                 }
