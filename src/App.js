@@ -79,7 +79,7 @@ function App() {
                                 props.onClick(props.data + f.target.innerHTML);
                         }
                     }
-                            key={operation} variant="calculatorButton" bg="#FED7D7">{operation}
+                            key={operation} variant="calculatorButton" bg="#FF66FF">{operation}
                     </Button>
                 )
             }
@@ -98,7 +98,7 @@ function App() {
      */
 
     function calculate(input) {
-        let numbers = input.split(/\+|\-|\*|\//g);
+        let numbers = input.split(/[+\-*\/]/g);
         let operations = input.replace(/[0-9]|\./g, "").split("");
         let divideAndMultiply = ["*", "/"];
         let addAndSubtract = ["+", "-"];
@@ -165,7 +165,7 @@ function App() {
                         setCalculation('ERROR');
                     }
                 }
-            } key='=' variant="calculatorButton" bg="#FED7D7" >=
+            } key='=' variant="calculatorButton" bg="#FF66FF" >=
 
             </Button>
         )
@@ -177,7 +177,7 @@ function App() {
                 (f) => {
                     props.onClick('0');
                 }
-            } key='C' variant="calculatorButton" bg="#FED7D7" >C
+            } key='C' variant="calculatorButton" bg="#FF66FF" >C
 
             </Button>
         )
@@ -192,7 +192,7 @@ function App() {
                     else
                         props.onClick('0');
                 }
-            } key='←'variant="calculatorButton" bg="#FED7D7" >←
+            } key='←'variant="calculatorButton" bg="#FF66FF" >←
             </Button>
         )
     }
@@ -206,18 +206,18 @@ function App() {
                     else
                         props.onClick(props.data + '.');
                 }
-            } key='.' variant="calculatorButton" bg="#FED7D7" >.
+            } key='.' variant="calculatorButton" bg="#FF66FF" >.
             </Button>
         )
     }
 
     return (
         <div className="App">
-            <Box display ="flex" flexDirection="column" justifyContent="center" alignItems="center" h="100vh">
+            <Box display ="flex" flexDirection="column" justifyContent="center" alignItems="center" h="100vh" bg ="purple.200">
                 <Box display="flex" gap="15px" flexDirection="column" justifyContent="center" alignItems="center" w="200px">
                     <Box display="flex" justifyCoontent="between" w="150%">
                         <Text display="flex" justifyContent="start" alignItems="center" w="100%" h="38px" px="10px"
-                              borderRadius="8px" marginTop="10px" fontWeight="semiBold" overflow="auto" bg="gray.100">{calculation}</Text>
+                              borderRadius="8px" marginTop="10px" fontWeight="semiBold" overflow="auto" bg="purple.100">{calculation}</Text>
                     </Box>
                     <Box display="flex" w="150%">
                         <NumberButtons data={calculation} onClick={setCalculation} />
